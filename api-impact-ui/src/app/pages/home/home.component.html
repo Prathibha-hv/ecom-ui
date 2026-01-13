@@ -1,0 +1,35 @@
+<!-- <h2>Home</h2>
+
+<button (click)="loadProducts()">Load Products</button>
+
+<pre *ngIf="products">{{ products | json }}</pre> -->
+<!-- <h2>Products</h2>
+
+<div style="display:flex; gap:20px; flex-wrap:wrap;">
+  <div style="border:1px solid #ccc; padding:10px; width:200px"
+       *ngFor="let p of products">
+
+    <img [src]="p.image" width="180" height="120" />
+    <h3>{{ p.name }}</h3>
+    <p>₹ {{ p.price }}</p>
+    <pre>{{ products | json }}</pre>
+
+
+    <button (click)="viewProduct(p.id)">
+      View Details
+    </button>
+  </div>
+</div> -->
+<div style="display:flex; gap:20px; flex-wrap:wrap; margin-top: 40px;">
+  <div *ngFor="let p of products" class="product-box" style="border:1px solid #ccc; padding:10px; width:200px;">
+      <img [src]="p.image" alt="{{p.name}}" width="180" height="120" style="object-fit: contain; margin-bottom: 8px;" />
+    <h3>{{ p.name }}</h3>
+    <p>₹ {{ p.price }}</p>
+    
+    <button (click)="viewProduct(p.id)">
+      View Details
+    </button>
+  </div>
+  
+</div>
+
