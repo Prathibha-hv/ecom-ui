@@ -1,35 +1,37 @@
-<!-- <h2>Home</h2>
+<div class="page-container">
+<!-- Hero -->
+<section class="hero">
+  <img src="assets/banner3.gif" alt="Shopping Banner" />
+</section>
 
-<button (click)="loadProducts()">Load Products</button>
+<!-- Carousel -->
+<section class="carousel-container">
+  <button class="nav-btn left" (click)="prev()">❮</button>
 
-<pre *ngIf="products">{{ products | json }}</pre> -->
-<!-- <h2>Products</h2>
+  <img
+    [src]="carouselImages[currentIndex]"
+    class="carousel-image"
+  />
 
-<div style="display:flex; gap:20px; flex-wrap:wrap;">
-  <div style="border:1px solid #ccc; padding:10px; width:200px"
-       *ngFor="let p of products">
+  <button class="nav-btn right" (click)="next()">❯</button>
+</section>
 
-    <img [src]="p.image" width="180" height="120" />
+<!-- Products -->
+<h2 class="section-title">Featured Products</h2>
+
+<p *ngIf="products.length === 0">Loading products...</p>
+
+<div class="product-grid">
+  <div *ngFor="let p of products" class="product-card">
+    <img [src]="p.image" alt="{{ p.name }}" />
+
     <h3>{{ p.name }}</h3>
-    <p>₹ {{ p.price }}</p>
-    <pre>{{ products | json }}</pre>
+    <p class="price">₹ {{ p.price }}</p>
+<button class="product-btn" (click)="viewProduct(p.id)">
+  View Details
+</button>
 
-
-    <button (click)="viewProduct(p.id)">
-      View Details
-    </button>
+   
   </div>
-</div> -->
-<div style="display:flex; gap:20px; flex-wrap:wrap; margin-top: 40px;">
-  <div *ngFor="let p of products" class="product-box" style="border:1px solid #ccc; padding:10px; width:200px;">
-      <img [src]="p.image" alt="{{p.name}}" width="180" height="120" style="object-fit: contain; margin-bottom: 8px;" />
-    <h3>{{ p.name }}</h3>
-    <p>₹ {{ p.price }}</p>
-    
-    <button (click)="viewProduct(p.id)">
-      View Details
-    </button>
-  </div>
-  
 </div>
-
+</div>

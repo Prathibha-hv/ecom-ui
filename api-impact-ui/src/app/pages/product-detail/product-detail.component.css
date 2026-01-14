@@ -1,0 +1,14 @@
+.product-info {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+.label {
+  font-weight: 600;
+  min-width: 90px;
+}
+
+.value {
+  color: #555;
+}

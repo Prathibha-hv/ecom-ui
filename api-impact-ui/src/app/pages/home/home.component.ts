@@ -45,9 +45,31 @@ import { Product } from '../../core/models/product.model';
   selector: 'app-home',
   standalone: true,
   imports: [CommonModule],
-  templateUrl: './home.component.html'
+  templateUrl: './home.component.html',
+  styleUrl: './home.component.css'
 })
 export class HomeComponent implements OnInit {
+  carouselImages = [
+    'assets/image1.jpg',
+    'assets/image2.jpeg',
+
+  'assets/image4.jpg'
+   
+];
+
+currentIndex = 0;
+
+next() {
+  this.currentIndex =
+    (this.currentIndex + 1) % this.carouselImages.length;
+}
+
+prev() {
+  this.currentIndex =
+    (this.currentIndex - 1 + this.carouselImages.length) %
+    this.carouselImages.length;
+}
+
 
   products: Product[] = [];
 

@@ -1,21 +1,22 @@
-<!-- <div *ngIf="product">
-  <img [src]="product.image" width="300" />
 
-  <h2>{{ product.name }}</h2>
-
-  <p>{{ product.description }}</p>
-
-  <h3>₹ {{ product.price }}</h3>
-</div> -->
 <div *ngIf="product">
   <img [src]="product.image" width="300" />
 
   <h2>{{ product.name }}</h2>
+  <div class="product-info">
+  <span class="label">Description:</span>
+  <span class="value">{{ product.description }}</span>
+</div>
 
-  <p>{{ product.description }}</p>
-
-  <h3>₹ {{ product.price }}</h3>
+<div class="product-info">
+  <span class="label">Color:</span>
+  <span class="value">{{ product.color }}</span>
+</div>
+<div class="product-info">
+  <span class="label">Price:</span>
+  <span class="value">{{ product.price }}</span>
+</div>
   
-
+<br>
   <button>Add to Cart</button>
 </div>
