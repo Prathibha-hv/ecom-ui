@@ -19,7 +19,8 @@ import { Product } from '../../core/models/product.model';
   selector: 'app-product-details',
   standalone: true,
   imports: [CommonModule],
-  templateUrl: './product-detail.component.html'
+  templateUrl: './product-detail.component.html',
+  styleUrl: './product-detail.component.css'
 })
 export class ProductDetailsComponent implements OnInit {
 
